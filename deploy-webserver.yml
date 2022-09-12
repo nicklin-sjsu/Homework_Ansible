@@ -1,0 +1,24 @@
+- name: Web Server Deployment
+  hosts: ansible_demo
+  tasks:
+    - name: "Install httpd"
+      package: 
+        name: httpd 
+        state: present
+    - name: "Copy index.html"
+      copy: 
+        dest: /var/www/html/index.html
+        content: |
+          <!DOCTYPE html>
+          <html>
+          <head>
+          <title>Hello Wrold</title>
+          </head>
+          <body onload="readValue();">
+          <div id="welcome">Hello World from SJSU-{{ server_name }}</div>
+          </body>
+          </html>
+    - name: "Start httpd"
+      service:
+        name: httpd 
+        state: started

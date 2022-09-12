@@ -1,0 +1,15 @@
+---
+- name: Remove Web Server
+  hosts: ansible_demo
+  tasks:
+
+    - name: Stop httpd service
+      service:
+        name: httpd
+        enabled: false
+        state: stopped
+
+    - name: uninstall httpd package
+      package:
+        name: httpd
+        state: absent

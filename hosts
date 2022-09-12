@@ -1,0 +1,3 @@
+[ansible_demo]
+198.18.134.49 ansible_ssh_pass=C1sco12345 ansible_ssh_user=root http_port=8080 server_name="1"
+198.18.134.50 ansible_ssh_pass=C1sco12345 ansible_ssh_user=root http_port=8080 server_name="2"
